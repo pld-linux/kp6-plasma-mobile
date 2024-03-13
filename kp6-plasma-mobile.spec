@@ -1,19 +1,19 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	6.0.1
+%define		kdeplasmaver	6.0.2
 %define		qtver		5.15.2
 %define		kpname		plasma-mobile
 %define		kf6_ver		5.102.0
 
 Summary:	plasma-mobile
 Name:		kp6-%{kpname}
-Version:	6.0.1
+Version:	6.0.2
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	d17b98bd29bbe799d852dd4d8ae3a9eb
+# Source0-md5:	d653cb575169f360d773de906780aeee
 URL:		https://kde.org/
 BuildRequires:	Qt6Core-devel >= 5.15.0
 BuildRequires:	Qt6Gui-devel >= 5.15.0
@@ -255,8 +255,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/plasma/look-and-feel/org.kde.breeze.mobile/contents/logout/ActionButton.qml
 %{_datadir}/plasma/look-and-feel/org.kde.breeze.mobile/contents/logout/Logout.qml
 %{_datadir}/plasma/look-and-feel/org.kde.breeze.mobile/contents/systemdialog/SystemDialog.qml
-%{_datadir}/plasma/look-and-feel/org.kde.breeze.mobile/contents/systemdialog/private/MobileSystemDialogButton.qml
-%{_datadir}/plasma/look-and-feel/org.kde.breeze.mobile/contents/systemdialog/private/ScrollView.qml
 %{_datadir}/plasma/look-and-feel/org.kde.breeze.mobile/metadata.json
 %{_datadir}/plasma/mobileinitialstart/org.kde.plasma.mobileinitialstart.cellular/contents/ui/EditProfileDialog.qml
 %{_datadir}/plasma/mobileinitialstart/org.kde.plasma.mobileinitialstart.cellular/contents/ui/main.qml

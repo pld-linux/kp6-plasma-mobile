@@ -1,19 +1,19 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	6.0.5
+%define		kdeplasmaver	6.1.0
 %define		qtver		5.15.2
 %define		kpname		plasma-mobile
 %define		kf6_ver		5.102.0
 
 Summary:	plasma-mobile
 Name:		kp6-%{kpname}
-Version:	6.0.5
+Version:	6.1.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	a3588aad3c6c7baaa77f6343bfa9f734
+# Source0-md5:	052e66310019ceb134741142ec345b97
 URL:		https://kde.org/
 BuildRequires:	Qt6Core-devel >= 5.15.0
 BuildRequires:	Qt6Gui-devel >= 5.15.0
@@ -35,6 +35,7 @@ BuildRequires:	ninja
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	xz
+Obsoletes:	kp5-%{kpname} < %{version}
 Obsoletes:	kp6-plasma-phone-components < 5.24.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -208,6 +209,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt6/qml/org/kde/plasma/mobileinitialstart/wifi/qmldir
 %attr(755,root,root) %{_libdir}/qt6/qml/org/kde/private/mobile/homescreen/halcyon/libhalcyonplugin.so
 %{_libdir}/qt6/qml/org/kde/private/mobile/homescreen/halcyon/qmldir
+%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kded/kded_plasma_mobile_autodetect_apn.so
+%{_datadir}/kwin/effects/mobiletaskswitcher/qml/TaskSwitcherHelpers.qml
 %{_desktopdir}/kcm_cellular_network.desktop
 %{_desktopdir}/kcm_mobile_hotspot.desktop
 %{_desktopdir}/kcm_mobile_info.desktop
@@ -222,7 +225,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kwin/effects/mobiletaskswitcher/qml/Task.qml
 %{_datadir}/kwin/effects/mobiletaskswitcher/qml/TaskList.qml
 %{_datadir}/kwin/effects/mobiletaskswitcher/qml/TaskSwitcher.qml
-%{_datadir}/kwin/effects/mobiletaskswitcher/qml/TaskSwitcherState.qml
 %{_datadir}/kwin/scripts/convergentwindows/contents/ui/main.qml
 %{_datadir}/kwin/scripts/convergentwindows/metadata.json
 %{_datadir}/metainfo/org.kde.breeze.mobile.appdata.xml
@@ -240,18 +242,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/metainfo/org.kde.plasma.quicksettings.docked.appdata.xml
 %{_datadir}/plasma/look-and-feel/org.kde.breeze.mobile/contents/defaults
 %{_datadir}/plasma/look-and-feel/org.kde.breeze.mobile/contents/layouts/layout.js
-%{_datadir}/plasma/look-and-feel/org.kde.breeze.mobile/contents/lockscreen/BottomIconIndicator.qml
-%{_datadir}/plasma/look-and-feel/org.kde.breeze.mobile/contents/lockscreen/Clock.qml
-%{_datadir}/plasma/look-and-feel/org.kde.breeze.mobile/contents/lockscreen/FlickContainer.qml
-%{_datadir}/plasma/look-and-feel/org.kde.breeze.mobile/contents/lockscreen/HeaderComponent.qml
-%{_datadir}/plasma/look-and-feel/org.kde.breeze.mobile/contents/lockscreen/Keypad.qml
-%{_datadir}/plasma/look-and-feel/org.kde.breeze.mobile/contents/lockscreen/LockScreen.qml
-%{_datadir}/plasma/look-and-feel/org.kde.breeze.mobile/contents/lockscreen/LockScreenNarrowContent.qml
-%{_datadir}/plasma/look-and-feel/org.kde.breeze.mobile/contents/lockscreen/LockScreenState.qml
-%{_datadir}/plasma/look-and-feel/org.kde.breeze.mobile/contents/lockscreen/LockScreenWideScreenContent.qml
-%{_datadir}/plasma/look-and-feel/org.kde.breeze.mobile/contents/lockscreen/NotificationsComponent.qml
-%{_datadir}/plasma/look-and-feel/org.kde.breeze.mobile/contents/lockscreen/PasswordBar.qml
-%{_datadir}/plasma/look-and-feel/org.kde.breeze.mobile/contents/lockscreen/WallpaperBlur.qml
 %{_datadir}/plasma/look-and-feel/org.kde.breeze.mobile/contents/logout/ActionButton.qml
 %{_datadir}/plasma/look-and-feel/org.kde.breeze.mobile/contents/logout/Logout.qml
 %{_datadir}/plasma/look-and-feel/org.kde.breeze.mobile/contents/systemdialog/SystemDialog.qml
@@ -275,7 +265,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/plasma/plasmoids/org.kde.plasma.mobile.homescreen.folio/contents/ui/AppDrawer.qml
 %{_datadir}/plasma/plasmoids/org.kde.plasma.mobile.homescreen.folio/contents/ui/AppDrawerGrid.qml
 %{_datadir}/plasma/plasmoids/org.kde.plasma.mobile.homescreen.folio/contents/ui/AppDrawerHeader.qml
-%{_datadir}/plasma/plasmoids/org.kde.plasma.mobile.homescreen.folio/contents/ui/ContextMenuLoader.qml
 %{_datadir}/plasma/plasmoids/org.kde.plasma.mobile.homescreen.folio/contents/ui/DelegateDragItem.qml
 %{_datadir}/plasma/plasmoids/org.kde.plasma.mobile.homescreen.folio/contents/ui/FavouritesBar.qml
 %{_datadir}/plasma/plasmoids/org.kde.plasma.mobile.homescreen.folio/contents/ui/FolderView.qml
@@ -341,3 +330,18 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/plasma/shells/org.kde.plasma.mobileshell/contents/views/Panel.qml
 %{_datadir}/plasma/shells/org.kde.plasma.mobileshell/metadata.json
 %{_datadir}/plasma/shells/org.kde.plasma.mobileshell/metadata.json.license
+%{_datadir}/plasma-mobile-apn-info/apns-full-conf.xml
+%{_datadir}/plasma/plasmoids/org.kde.plasma.mobile.homescreen.folio/contents/ui/private/ConfirmDeleteFolderDialogLoader.qml
+%{_datadir}/plasma/plasmoids/org.kde.plasma.mobile.homescreen.folio/contents/ui/private/ContextMenuLoader.qml
+%{_datadir}/plasma/shells/org.kde.plasma.mobileshell/contents/lockscreen/BottomIconIndicator.qml
+%{_datadir}/plasma/shells/org.kde.plasma.mobileshell/contents/lockscreen/Clock.qml
+%{_datadir}/plasma/shells/org.kde.plasma.mobileshell/contents/lockscreen/FlickContainer.qml
+%{_datadir}/plasma/shells/org.kde.plasma.mobileshell/contents/lockscreen/HeaderComponent.qml
+%{_datadir}/plasma/shells/org.kde.plasma.mobileshell/contents/lockscreen/Keypad.qml
+%{_datadir}/plasma/shells/org.kde.plasma.mobileshell/contents/lockscreen/LockScreen.qml
+%{_datadir}/plasma/shells/org.kde.plasma.mobileshell/contents/lockscreen/LockScreenNarrowContent.qml
+%{_datadir}/plasma/shells/org.kde.plasma.mobileshell/contents/lockscreen/LockScreenState.qml
+%{_datadir}/plasma/shells/org.kde.plasma.mobileshell/contents/lockscreen/LockScreenWideScreenContent.qml
+%{_datadir}/plasma/shells/org.kde.plasma.mobileshell/contents/lockscreen/NotificationsComponent.qml
+%{_datadir}/plasma/shells/org.kde.plasma.mobileshell/contents/lockscreen/PasswordBar.qml
+%{_datadir}/plasma/shells/org.kde.plasma.mobileshell/contents/lockscreen/WallpaperBlur.qml

@@ -9,7 +9,7 @@
 Summary:	plasma-mobile
 Name:		kp6-%{kpname}
 Version:	6.1.5
-Release:	1
+Release:	2
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
@@ -21,6 +21,7 @@ BuildRequires:	Qt6Network-devel >= 5.15.0
 BuildRequires:	Qt6Qml-devel
 BuildRequires:	Qt6Quick-devel
 BuildRequires:	cmake >= 3.16.0
+BuildRequires:	qcoro-qt6-devel
 BuildRequires:	gettext-devel
 BuildRequires:	kf6-extra-cmake-modules >= 5.82
 BuildRequires:	kf6-ki18n-devel >= 5.82

@@ -2,9 +2,9 @@
 # Conditional build:
 %bcond_with	tests		# build with tests
 %define		kdeplasmaver	6.1.5
-%define		qtver		5.15.2
+%define		qtver		6.6.0
 %define		kpname		plasma-mobile
-%define		kf6_ver		5.102.0
+%define		kf6_ver		6.1.0
 
 Summary:	plasma-mobile
 Name:		kp6-%{kpname}
@@ -15,25 +15,26 @@ Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
 # Source0-md5:	952806ac561463152f43f6e3a597da49
 URL:		https://kde.org/
-BuildRequires:	Qt6Core-devel >= 5.15.0
-BuildRequires:	Qt6Gui-devel >= 5.15.0
-BuildRequires:	Qt6Network-devel >= 5.15.0
-BuildRequires:	Qt6Qml-devel
-BuildRequires:	Qt6Quick-devel
+BuildRequires:	Qt6Core-devel >= %{qtver}
+BuildRequires:	Qt6Gui-devel >= %{qtver}
+BuildRequires:	Qt6Network-devel >= %{qtver}
+BuildRequires:	Qt6Qml-devel >= %{qtver}
+BuildRequires:	Qt6Quick-devel >= %{qtver}
+BuildRequires:	Qt6Sensors-devel >= %{qtver}
 BuildRequires:	cmake >= 3.16.0
-BuildRequires:	qcoro-qt6-devel
 BuildRequires:	gettext-devel
-BuildRequires:	kf6-extra-cmake-modules >= 5.82
-BuildRequires:	kf6-ki18n-devel >= 5.82
-BuildRequires:	kf6-kio-devel >= 5.82
-BuildRequires:	kf6-knotifications-devel >= 5.82
-BuildRequires:	kf6-kservice-devel >= 5.82
-BuildRequires:	kf6-modemmanager-qt-devel >= 5.82
+BuildRequires:	kf6-extra-cmake-modules >= %{kf6_ver}
+BuildRequires:	kf6-ki18n-devel >= %{kf6_ver}
+BuildRequires:	kf6-kio-devel >= %{kf6_ver}
+BuildRequires:	kf6-knotifications-devel >= %{kf6_ver}
+BuildRequires:	kf6-kservice-devel >= %{kf6_ver}
+BuildRequires:	kf6-modemmanager-qt-devel >= %{kf6_ver}
 BuildRequires:	kirigami-addons-devel >= 0.11.90
-BuildRequires:	kp6-kwayland-devel >= 5.82
-BuildRequires:	kp6-kwin-devel >= 5.23.0
+BuildRequires:	kp6-kwayland-devel >= %{kdeplasmaver}
+BuildRequires:	kp6-kwin-devel >= %{kdeplasmaver}
 BuildRequires:	ninja
 BuildRequires:	pkgconfig
+BuildRequires:	qcoro-qt6-devel
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	xz
 Obsoletes:	kp5-%{kpname} < %{version}

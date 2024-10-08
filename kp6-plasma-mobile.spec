@@ -1,19 +1,19 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	6.1.5
+%define		kdeplasmaver	6.2.0
 %define		qtver		6.6.0
 %define		kpname		plasma-mobile
 %define		kf6_ver		6.1.0
 
 Summary:	plasma-mobile
 Name:		kp6-%{kpname}
-Version:	6.1.5
-Release:	2
+Version:	6.2.0
+Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	952806ac561463152f43f6e3a597da49
+# Source0-md5:	3c9bec6261444ddaec3f98da448a7414
 URL:		https://kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel >= %{qtver}
@@ -212,6 +212,10 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt6/qml/org/kde/private/mobile/homescreen/halcyon/libhalcyonplugin.so
 %{_libdir}/qt6/qml/org/kde/private/mobile/homescreen/halcyon/qmldir
 %attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kded/kded_plasma_mobile_autodetect_apn.so
+%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/plasma/quicksetting/record/librecordplugin.so
+%{_libdir}/qt6/qml/org/kde/plasma/quicksetting/record/qmldir
+%{_datadir}/knotifications6/plasma_mobile_quicksetting_record.notifyrc
+%{_datadir}/kwin/effects/mobiletaskswitcher/mobiletaskswitcher.json
 %{_datadir}/kwin/effects/mobiletaskswitcher/qml/TaskSwitcherHelpers.qml
 %{_desktopdir}/kcm_cellular_network.desktop
 %{_desktopdir}/kcm_mobile_hotspot.desktop
@@ -341,9 +345,20 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/plasma/shells/org.kde.plasma.mobileshell/contents/lockscreen/HeaderComponent.qml
 %{_datadir}/plasma/shells/org.kde.plasma.mobileshell/contents/lockscreen/Keypad.qml
 %{_datadir}/plasma/shells/org.kde.plasma.mobileshell/contents/lockscreen/LockScreen.qml
-%{_datadir}/plasma/shells/org.kde.plasma.mobileshell/contents/lockscreen/LockScreenNarrowContent.qml
 %{_datadir}/plasma/shells/org.kde.plasma.mobileshell/contents/lockscreen/LockScreenState.qml
-%{_datadir}/plasma/shells/org.kde.plasma.mobileshell/contents/lockscreen/LockScreenWideScreenContent.qml
 %{_datadir}/plasma/shells/org.kde.plasma.mobileshell/contents/lockscreen/NotificationsComponent.qml
 %{_datadir}/plasma/shells/org.kde.plasma.mobileshell/contents/lockscreen/PasswordBar.qml
 %{_datadir}/plasma/shells/org.kde.plasma.mobileshell/contents/lockscreen/WallpaperBlur.qml
+%{_datadir}/metainfo/org.kde.plasma.mobile.defaultNavigationPanel.appdata.xml
+%{_datadir}/metainfo/org.kde.plasma.mobile.defaultStatusBar.appdata.xml
+%{_datadir}/metainfo/org.kde.plasma.quicksetting.record.appdata.xml
+%{_datadir}/plasma/layout-templates/org.kde.plasma.mobile.defaultNavigationPanel/contents/layout.js
+%{_datadir}/plasma/layout-templates/org.kde.plasma.mobile.defaultNavigationPanel/metadata.json
+%{_datadir}/plasma/layout-templates/org.kde.plasma.mobile.defaultStatusBar/contents/layout.js
+%{_datadir}/plasma/layout-templates/org.kde.plasma.mobile.defaultStatusBar/metadata.json
+%{_datadir}/plasma/quicksettings/org.kde.plasma.quicksetting.record/contents/ui/main.qml
+%{_datadir}/plasma/quicksettings/org.kde.plasma.quicksetting.record/metadata.json
+%{_datadir}/plasma/shells/org.kde.plasma.mobileshell/contents/applet/AppletError.qml
+%{_datadir}/plasma/shells/org.kde.plasma.mobileshell/contents/applet/CompactApplet.qml
+%{_datadir}/plasma/shells/org.kde.plasma.mobileshell/contents/applet/DefaultCompactRepresentation.qml
+%{_datadir}/plasma/shells/org.kde.plasma.mobileshell/contents/lockscreen/LockScreenContent.qml

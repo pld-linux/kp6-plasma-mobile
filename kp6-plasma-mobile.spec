@@ -26,10 +26,10 @@ BuildRequires:	gettext-devel
 BuildRequires:	kf6-extra-cmake-modules >= %{kf6_ver}
 BuildRequires:	kf6-ki18n-devel >= %{kf6_ver}
 BuildRequires:	kf6-kio-devel >= %{kf6_ver}
+BuildRequires:	kf6-kirigami-addons-devel >= 0.11.90
 BuildRequires:	kf6-knotifications-devel >= %{kf6_ver}
 BuildRequires:	kf6-kservice-devel >= %{kf6_ver}
 BuildRequires:	kf6-modemmanager-qt-devel >= %{kf6_ver}
-BuildRequires:	kirigami-addons-devel >= 0.11.90
 BuildRequires:	kp6-kwayland-devel >= %{kdeplasmaver}
 BuildRequires:	kp6-kwin-devel >= %{kdeplasmaver}
 BuildRequires:	ninja

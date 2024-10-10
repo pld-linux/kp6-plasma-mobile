@@ -6,7 +6,8 @@
 %define		kpname		plasma-mobile
 %define		kf6_ver		6.1.0
 
-Summary:	plasma-mobile
+Summary:	Plasma Mobile components
+Summary(pl.UTF-8):	Komponenty Plasma Mobile
 Name:		kp6-%{kpname}
 Version:	6.2.0
 Release:	1
@@ -14,7 +15,7 @@ License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
 # Source0-md5:	3c9bec6261444ddaec3f98da448a7414
-URL:		https://kde.org/
+URL:		https://plasma-mobile.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel >= %{qtver}
 BuildRequires:	Qt6Network-devel >= %{qtver}

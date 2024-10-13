@@ -82,7 +82,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/startplasmamobile
 %attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kded/kded_plasma_mobile_autodetect_apn.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kded/kded_plasma_mobile_start.so
+%dir %{_libdir}/qt6/plugins/kwin/effects/plugins
 %attr(755,root,root) %{_libdir}/qt6/plugins/kwin/effects/plugins/mobiletaskswitcher.so
+%dir %{_libdir}/qt6/plugins/plasma/applets
 %attr(755,root,root) %{_libdir}/qt6/plugins/plasma/applets/org.kde.plasma.mobile.homescreen.folio.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/plasma/applets/org.kde.plasma.mobile.homescreen.halcyon.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/plasma/applets/org.kde.plasma.mobile.panel.so
@@ -113,9 +115,9 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/qt6/qml/org/kde/plasma/mobileinitialstart/wifi
 %attr(755,root,root) %{_libdir}/qt6/qml/org/kde/plasma/mobileinitialstart/wifi/libwifiplugin.so
 %{_libdir}/qt6/qml/org/kde/plasma/mobileinitialstart/wifi/qmldir
-%dir %{_libdir}/qt6/qml/org/kde/plasma/private/mobile
-%dir %{_libdir}/qt6/qml/org/kde/plasma/private/mobile/homescreeen
-%dir %{_libdir}/qt6/qml/org/kde/plasma/private/mobile/homescreeen/halcyon
+%dir %{_libdir}/qt6/qml/org/kde/private/mobile
+%dir %{_libdir}/qt6/qml/org/kde/private/mobile/homescreen
+%dir %{_libdir}/qt6/qml/org/kde/private/mobile/homescreen/halcyon
 %attr(755,root,root) %{_libdir}/qt6/qml/org/kde/private/mobile/homescreen/halcyon/libhalcyonplugin.so
 %{_libdir}/qt6/qml/org/kde/private/mobile/homescreen/halcyon/qmldir
 %dir %{_libdir}/qt6/qml/org/kde/plasma/private/mobileshell

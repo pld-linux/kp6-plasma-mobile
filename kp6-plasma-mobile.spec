@@ -2,7 +2,7 @@
 # Conditional build:
 %bcond_with	tests		# test suite
 
-%define		kdeplasmaver	6.2.0
+%define		kdeplasmaver	6.2.1
 %define		qtver		6.6.0
 %define		kpname		plasma-mobile
 %define		kf6_ver		6.1.0
@@ -10,12 +10,12 @@
 Summary:	Plasma Mobile components
 Summary(pl.UTF-8):	Komponenty Plasma Mobile
 Name:		kp6-%{kpname}
-Version:	6.2.0
-Release:	2
+Version:	6.2.1
+Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	3c9bec6261444ddaec3f98da448a7414
+# Source0-md5:	d31041525fc5357ffc7d3a4a20b76096
 URL:		https://plasma-mobile.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel >= %{qtver}
@@ -178,6 +178,16 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/qt6/qml/org/kde/plasma/quicksetting/screenshot
 %attr(755,root,root) %{_libdir}/qt6/qml/org/kde/plasma/quicksetting/screenshot/libscreenshotplugin.so
 %{_libdir}/qt6/qml/org/kde/plasma/quicksetting/screenshot/qmldir
+%dir %{_libdir}/qt6/qml/org/kde/plasma/private/mobileshell/dpmsplugin
+%{_libdir}/qt6/qml/org/kde/plasma/private/mobileshell/dpmsplugin/dpmsplugin.qmltypes
+%{_libdir}/qt6/qml/org/kde/plasma/private/mobileshell/dpmsplugin/kde-qmlmodule.version
+%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/plasma/private/mobileshell/dpmsplugin/libdpmsplugin.so
+%{_libdir}/qt6/qml/org/kde/plasma/private/mobileshell/dpmsplugin/qmldir
+%dir %{_libdir}/qt6/qml/org/kde/plasma/private/mobileshell/screenbrightnessplugin
+%{_libdir}/qt6/qml/org/kde/plasma/private/mobileshell/screenbrightnessplugin/kde-qmlmodule.version
+%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/plasma/private/mobileshell/screenbrightnessplugin/libscreenbrightnessplugin.so
+%{_libdir}/qt6/qml/org/kde/plasma/private/mobileshell/screenbrightnessplugin/qmldir
+%{_libdir}/qt6/qml/org/kde/plasma/private/mobileshell/screenbrightnessplugin/screenbrightnessplugin.qmltypes
 %{_datadir}/dbus-1/interfaces/org.kde.plasmashell.Mobile.xml
 %{_datadir}/knotifications6/plasma_mobile_quicksetting_record.notifyrc
 %{_datadir}/knotifications6/plasma_mobile_quicksetting_screenshot.notifyrc

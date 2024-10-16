@@ -11,7 +11,7 @@ Summary:	Plasma Mobile components
 Summary(pl.UTF-8):	Komponenty Plasma Mobile
 Name:		kp6-%{kpname}
 Version:	6.2.1
-Release:	1
+Release:	2
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
@@ -34,6 +34,7 @@ BuildRequires:	kf6-kservice-devel >= %{kf6_ver}
 BuildRequires:	kf6-modemmanager-qt-devel >= %{kf6_ver}
 BuildRequires:	kp6-kwayland-devel >= %{kdeplasmaver}
 BuildRequires:	kp6-kwin-devel >= %{kdeplasmaver}
+BuildRequires:	kp6-plasma-workspace-devel >= %{kdeplasmaver}
 BuildRequires:	ninja
 BuildRequires:	pkgconfig
 BuildRequires:	qcoro-qt6-devel

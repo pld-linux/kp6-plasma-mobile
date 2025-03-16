@@ -2,7 +2,7 @@
 # Conditional build:
 %bcond_with	tests		# test suite
 
-%define		kdeplasmaver	6.3.2
+%define		kdeplasmaver	6.3.3
 %define		qtver		6.6.0
 %define		kpname		plasma-mobile
 %define		kf6_ver		6.1.0
@@ -10,12 +10,12 @@
 Summary:	Plasma Mobile components
 Summary(pl.UTF-8):	Komponenty Plasma Mobile
 Name:		kp6-%{kpname}
-Version:	6.3.2
-Release:	2
+Version:	6.3.3
+Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	5c1c23af1627d25842bfc28dc56fe048
+# Source0-md5:	a8a8987bbfa7bf89667d1be6432da2b3
 URL:		https://plasma-mobile.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel >= %{qtver}
@@ -83,8 +83,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/startplasmamobile
 %attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kded/kded_plasma_mobile_autodetect_apn.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kded/kded_plasma_mobile_start.so
-%dir %{_libdir}/qt6/plugins/kwin/effects/plugins
-%attr(755,root,root) %{_libdir}/qt6/plugins/kwin/effects/plugins/mobiletaskswitcher.so
 %dir %{_libdir}/qt6/plugins/plasma/applets
 %attr(755,root,root) %{_libdir}/qt6/plugins/plasma/applets/org.kde.plasma.mobile.homescreen.folio.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/plasma/applets/org.kde.plasma.mobile.homescreen.halcyon.so
@@ -189,6 +187,11 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt6/qml/org/kde/plasma/private/mobileshell/screenbrightnessplugin/libscreenbrightnessplugin.so
 %{_libdir}/qt6/qml/org/kde/plasma/private/mobileshell/screenbrightnessplugin/qmldir
 %{_libdir}/qt6/qml/org/kde/plasma/private/mobileshell/screenbrightnessplugin/screenbrightnessplugin.qmltypes
+%dir %{_libdir}/qt6/qml/org/kde/plasma/private/mobileshell/taskswitcherplugin
+%{_libdir}/qt6/qml/org/kde/plasma/private/mobileshell/taskswitcherplugin/kde-qmlmodule.version
+%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/plasma/private/mobileshell/taskswitcherplugin/libmobiletaskswitcherplugin.so
+%{_libdir}/qt6/qml/org/kde/plasma/private/mobileshell/taskswitcherplugin/mobiletaskswitcherplugin.qmltypes
+%{_libdir}/qt6/qml/org/kde/plasma/private/mobileshell/taskswitcherplugin/qmldir
 %{_datadir}/dbus-1/interfaces/org.kde.plasmashell.Mobile.xml
 %{_datadir}/knotifications6/plasma_mobile_quicksetting_record.notifyrc
 %{_datadir}/knotifications6/plasma_mobile_quicksetting_screenshot.notifyrc
@@ -218,6 +221,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/metainfo/org.kde.plasma.mobileinitialstart.cellular.appdata.xml
 %{_datadir}/metainfo/org.kde.plasma.mobileinitialstart.finished.appdata.xml
 %{_datadir}/metainfo/org.kde.plasma.mobileinitialstart.prepare.appdata.xml
+%{_datadir}/metainfo/org.kde.plasma.mobileinitialstart.systemnavigation.appdata.xml
 %{_datadir}/metainfo/org.kde.plasma.mobileinitialstart.time.appdata.xml
 %{_datadir}/metainfo/org.kde.plasma.mobileinitialstart.wifi.appdata.xml
 %{_datadir}/metainfo/org.kde.plasma.mobileshell.appdata.xml

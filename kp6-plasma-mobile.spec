@@ -2,7 +2,7 @@
 # Conditional build:
 %bcond_with	tests		# test suite
 
-%define		kdeplasmaver	6.3.5
+%define		kdeplasmaver	6.4.0
 %define		qtver		6.6.0
 %define		kpname		plasma-mobile
 %define		kf6_ver		6.1.0
@@ -10,12 +10,12 @@
 Summary:	Plasma Mobile components
 Summary(pl.UTF-8):	Komponenty Plasma Mobile
 Name:		kp6-%{kpname}
-Version:	6.3.5
+Version:	6.4.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	c73d65160de22562d215b4e1d785d753
+# Source0-md5:	ecf0a2caa5b52a1a176d833ca738488b
 URL:		https://plasma-mobile.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel >= %{qtver}
@@ -95,13 +95,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt6/plugins/plasma/applets/org.kde.plasma.mobile.homescreen.halcyon.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/plasma/applets/org.kde.plasma.mobile.panel.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/plasma/applets/org.kde.plasma.mobile.taskpanel.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/systemsettings/kcm_cellular_network.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/systemsettings/kcm_mobile_hotspot.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/systemsettings/kcm_mobile_info.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/systemsettings/kcm_mobile_onscreenkeyboard.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/systemsettings/kcm_mobile_power.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/systemsettings/kcm_mobile_time.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/systemsettings/kcm_mobile_wifi.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/systemsettings/kcm_mobileshell.so
 %dir %{_libdir}/qt6/qml/org/kde/plasma/mm
 %attr(755,root,root) %{_libdir}/qt6/qml/org/kde/plasma/mm/libppc-mmqmlplugin.so
@@ -199,6 +195,19 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt6/qml/org/kde/plasma/private/mobileshell/taskswitcherplugin/libmobiletaskswitcherplugin.so
 %{_libdir}/qt6/qml/org/kde/plasma/private/mobileshell/taskswitcherplugin/mobiletaskswitcherplugin.qmltypes
 %{_libdir}/qt6/qml/org/kde/plasma/private/mobileshell/taskswitcherplugin/qmldir
+%dir %{_libdir}/qt6/qml/org/kde/plasma/private/mobileshell/rotationplugin
+%{_libdir}/qt6/qml/org/kde/plasma/private/mobileshell/rotationplugin/kde-qmlmodule.version
+%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/plasma/private/mobileshell/rotationplugin/librotationplugin.so
+%{_libdir}/qt6/qml/org/kde/plasma/private/mobileshell/rotationplugin/qmldir
+%{_libdir}/qt6/qml/org/kde/plasma/private/mobileshell/rotationplugin/rotationplugin.qmltypes
+%{_libdir}/qt6/qml/org/kde/plasma/quicksetting/flashlight/flashlightplugin.qmltypes
+%{_libdir}/qt6/qml/org/kde/plasma/quicksetting/flashlight/kde-qmlmodule.version
+%{_libdir}/qt6/qml/org/kde/plasma/quicksetting/nightcolor/kde-qmlmodule.version
+%{_libdir}/qt6/qml/org/kde/plasma/quicksetting/nightcolor/nightcolorplugin.qmltypes
+%{_libdir}/qt6/qml/org/kde/plasma/quicksetting/powermenu/kde-qmlmodule.version
+%{_libdir}/qt6/qml/org/kde/plasma/quicksetting/powermenu/powermenuplugin.qmltypes
+%{_libdir}/qt6/qml/org/kde/plasma/quicksetting/record/kde-qmlmodule.version
+%{_libdir}/qt6/qml/org/kde/plasma/quicksetting/record/recordplugin.qmltypes
 %{_datadir}/dbus-1/interfaces/org.kde.plasmashell.Mobile.xml
 %{_datadir}/knotifications6/plasma_mobile_quicksetting_record.notifyrc
 %{_datadir}/knotifications6/plasma_mobile_quicksetting_screenshot.notifyrc
@@ -234,9 +243,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/metainfo/org.kde.plasma.mobileshell.appdata.xml
 %{_datadir}/metainfo/org.kde.plasma.quicksetting.airplanemode.appdata.xml
 %{_datadir}/metainfo/org.kde.plasma.quicksetting.audio.appdata.xml
+%{_datadir}/metainfo/org.kde.plasma.quicksetting.autohidepanels.appdata.xml
 %{_datadir}/metainfo/org.kde.plasma.quicksetting.battery.appdata.xml
 %{_datadir}/metainfo/org.kde.plasma.quicksetting.bluetooth.appdata.xml
 %{_datadir}/metainfo/org.kde.plasma.quicksetting.caffeine.appdata.xml
+%{_datadir}/metainfo/org.kde.plasma.quicksetting.docked.appdata.xml
 %{_datadir}/metainfo/org.kde.plasma.quicksetting.donotdisturb.appdata.xml
 %{_datadir}/metainfo/org.kde.plasma.quicksetting.flashlight.appdata.xml
 %{_datadir}/metainfo/org.kde.plasma.quicksetting.hotspot.appdata.xml
@@ -249,7 +260,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/metainfo/org.kde.plasma.quicksetting.screenshot.appdata.xml
 %{_datadir}/metainfo/org.kde.plasma.quicksetting.settingsapp.appdata.xml
 %{_datadir}/metainfo/org.kde.plasma.quicksetting.wifi.appdata.xml
-%{_datadir}/metainfo/org.kde.plasma.quicksettings.docked.appdata.xml
 %{_datadir}/plasma/layout-templates/org.kde.plasma.mobile.defaultNavigationPanel
 %{_datadir}/plasma/layout-templates/org.kde.plasma.mobile.defaultStatusBar
 %{_datadir}/plasma/look-and-feel/org.kde.breeze.mobile
@@ -259,18 +269,15 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/plasma/plasmoids/org.kde.plasma.mobile.panel
 %{_datadir}/plasma/plasmoids/org.kde.plasma.mobile.taskpanel
 %dir %{_datadir}/plasma/quicksettings
+%{_datadir}/plasma/quicksettings/org.kde.plasma.quicksetting.autohidepanels
+%{_datadir}/plasma/quicksettings/org.kde.plasma.quicksetting.docked
 %{_datadir}/plasma/quicksettings/org.kde.plasma.quicksetting.donotdisturb
 %{_datadir}/plasma/quicksettings/org.kde.plasma.quicksetting.hotspot
 %{_datadir}/plasma/quicksettings/org.kde.plasma.quicksetting.record
-%{_datadir}/plasma/quicksettings/org.kde.plasma.quicksettings.docked
 %{_datadir}/plasma/shells/org.kde.plasma.mobileshell
 %{_datadir}/plasma-mobile-apn-info
 %{_datadir}/wayland-sessions/plasma-mobile.desktop
-%{_desktopdir}/kcm_cellular_network.desktop
-%{_desktopdir}/kcm_mobile_hotspot.desktop
 %{_desktopdir}/kcm_mobile_info.desktop
 %{_desktopdir}/kcm_mobile_onscreenkeyboard.desktop
-%{_desktopdir}/kcm_mobile_power.desktop
 %{_desktopdir}/kcm_mobile_time.desktop
-%{_desktopdir}/kcm_mobile_wifi.desktop
 %{_desktopdir}/kcm_mobileshell.desktop

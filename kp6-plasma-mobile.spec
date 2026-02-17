@@ -2,7 +2,7 @@
 # Conditional build:
 %bcond_with	tests		# test suite
 
-%define		kdeplasmaver	6.5.5
+%define		kdeplasmaver	6.6.0
 %define		qtver		6.6.0
 %define		kpname		plasma-mobile
 %define		kf6_ver		6.1.0
@@ -10,12 +10,12 @@
 Summary:	Plasma Mobile components
 Summary(pl.UTF-8):	Komponenty Plasma Mobile
 Name:		kp6-%{kpname}
-Version:	6.5.5
-Release:	2
+Version:	6.6.0
+Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	490fb9c9f0c23899260ff875315b1edd
+# Source0-md5:	ad5a1ab2d37b651e70b16b9b0f7a0732
 URL:		https://plasma-mobile.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel >= %{qtver}
@@ -97,7 +97,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt6/plugins/plasma/applets/org.kde.plasma.mobile.panel.so
 %{_libdir}/qt6/plugins/plasma/applets/org.kde.plasma.mobile.taskpanel.so
 %{_libdir}/qt6/plugins/plasma/kcms/systemsettings/kcm_mobile_info.so
-%{_libdir}/qt6/plugins/plasma/kcms/systemsettings/kcm_mobile_onscreenkeyboard.so
 %{_libdir}/qt6/plugins/plasma/kcms/systemsettings/kcm_mobile_time.so
 %{_libdir}/qt6/plugins/plasma/kcms/systemsettings/kcm_mobileshell.so
 %{_libdir}/qt6/qml/org/kde/plasma/mm
@@ -161,8 +160,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/plasma-mobile-apn-info
 %{_datadir}/wayland-sessions/plasma-mobile.desktop
 %{_desktopdir}/kcm_mobile_info.desktop
-%{_desktopdir}/kcm_mobile_onscreenkeyboard.desktop
 %{_desktopdir}/kcm_mobile_time.desktop
 %{_desktopdir}/kcm_mobileshell.desktop
 %{_datadir}/polkit-1/actions/org.kde.plasma.mobileshell.flashlighthelper.policy
 %{_datadir}/polkit-1/actions/org.kde.plasma.mobileshell.waydroidhelper.policy
+%{_datadir}/dbus-1/interfaces/org.kde.plasmashell.Mobile.Panels.xml
+%{_datadir}/metainfo/org.kde.plasma.mobileshell.metainfo.xml
+%{_datadir}/plasma-mobile-device-presets

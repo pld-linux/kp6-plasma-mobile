@@ -2,7 +2,7 @@
 # Conditional build:
 %bcond_with	tests		# test suite
 
-%define		kdeplasmaver	6.6.2
+%define		kdeplasmaver	6.6.3
 %define		qtver		6.6.0
 %define		kpname		plasma-mobile
 %define		kf6_ver		6.1.0
@@ -10,12 +10,12 @@
 Summary:	Plasma Mobile components
 Summary(pl.UTF-8):	Komponenty Plasma Mobile
 Name:		kp6-%{kpname}
-Version:	6.6.2
+Version:	6.6.3
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	a7902707e07d49aed114aa369ec73eec
+# Source0-md5:	512fd26dcaf2caa13a76801c711f843c
 URL:		https://plasma-mobile.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel >= %{qtver}

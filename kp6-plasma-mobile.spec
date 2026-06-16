@@ -2,7 +2,7 @@
 # Conditional build:
 %bcond_with	tests		# test suite
 
-%define		kdeplasmaver	6.6.5
+%define		kdeplasmaver	6.7.0
 %define		qtver		6.6.0
 %define		kpname		plasma-mobile
 %define		kf6_ver		6.1.0
@@ -10,12 +10,12 @@
 Summary:	Plasma Mobile components
 Summary(pl.UTF-8):	Komponenty Plasma Mobile
 Name:		kp6-%{kpname}
-Version:	6.6.5
+Version:	6.7.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	debc51e8b6a57ad81bcab9f3b60a77d2
+# Source0-md5:	28cbca718c475363663aacc7aa55dbcc
 URL:		https://plasma-mobile.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel >= %{qtver}
@@ -100,7 +100,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt6/plugins/plasma/kcms/systemsettings/kcm_mobile_info.so
 %{_libdir}/qt6/plugins/plasma/kcms/systemsettings/kcm_mobile_time.so
 %{_libdir}/qt6/plugins/plasma/kcms/systemsettings/kcm_mobileshell.so
-%{_libdir}/qt6/qml/org/kde/plasma/mm
 %{_libdir}/qt6/qml/org/kde/plasma/mobileinitialstart
 %{_libdir}/qt6/qml/org/kde/plasma/private/mobileshell
 %{_libdir}/qt6/qml/org/kde/plasma/quicksetting
@@ -168,3 +167,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/dbus-1/interfaces/org.kde.plasmashell.Mobile.Panels.xml
 %{_datadir}/metainfo/org.kde.plasma.mobileshell.metainfo.xml
 %{_datadir}/plasma-mobile-device-presets
+%{_datadir}/qlogging-categories6/plasmamobile.categories

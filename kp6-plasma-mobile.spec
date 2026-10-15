@@ -2,7 +2,7 @@
 # Conditional build:
 %bcond_with	tests		# test suite
 
-%define		kdeplasmaver	6.7.5
+%define		kdeplasmaver	6.8.0
 %define		qtver		6.6.0
 %define		kpname		plasma-mobile
 %define		kf6_ver		6.1.0
@@ -10,12 +10,12 @@
 Summary:	Plasma Mobile components
 Summary(pl.UTF-8):	Komponenty Plasma Mobile
 Name:		kp6-%{kpname}
-Version:	6.7.5
+Version:	6.8.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	0abd83108e470ddf86619839e0ac755f
+# Source0-md5:	1511a08bbfb6fa2e544f1ff59dc44cc1
 URL:		https://plasma-mobile.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel >= %{qtver}
@@ -166,5 +166,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/polkit-1/actions/org.kde.plasma.mobileshell.waydroidhelper.policy
 %{_datadir}/dbus-1/interfaces/org.kde.plasmashell.Mobile.Panels.xml
 %{_datadir}/metainfo/org.kde.plasma.mobileshell.metainfo.xml
+%{_datadir}/metainfo/org.kde.plasma.quicksetting.darkmode.appdata.xml
 %{_datadir}/plasma-mobile-device-presets
 %{_datadir}/qlogging-categories6/plasmamobile.categories
